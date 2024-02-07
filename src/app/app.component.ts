@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, Validators } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'template-driven-form';
 
   mydata = {
-    name:'Ranjith',
+    name:'',
     email:'',
     password:'',
     dob:'',
