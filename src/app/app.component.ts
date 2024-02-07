@@ -8,31 +8,27 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, CommonModule, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'template-driven-form';
 
   mydata = {
-    name:'',
-    email:'',
-    password:'',
-    dob:'',
-    address:[
-      {doorNo: ''}
-    ],
+    name: '',
+    email: '',
+    password: '',
+    dob: '',
+    address: [{ doorNo: '' }],
+  };
 
+  addAddress() {
+    this.mydata.address.push({ doorNo: '' });
+  }
+  removeAddress(index: any) {
+    this.mydata.address.splice(index, 1);
   }
 
-  addAddress(){
-    this.mydata.address.push({doorNo: ''});
-  }
-  removeAddress(index: any){
-    this.mydata.address.splice(index,1);
-  }
-
-  handleValitade(form: any){
+  handleValitade(form: any) {
     console.log(form.invalid);
-    
   }
 }
